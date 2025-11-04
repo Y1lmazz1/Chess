@@ -19,7 +19,7 @@ public class Rook extends Piece {
     }
     @Override
     public boolean canMoveTo(int newCol, int newRow) {
-        // Kale aynı satır veya sütunda hareket eder
+        
         return (this.col == newCol || this.row == newRow) && !(this.col == newCol && this.row == newRow);
     }
 
@@ -27,3 +27,4 @@ public class Rook extends Piece {
 
 
 }
+
