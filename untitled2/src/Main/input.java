@@ -24,7 +24,7 @@ public class input extends MouseAdapter {
             board.selectedCol = col;
             board.selectedRow = row;
 
-            // Geçerli hamleleri hesapla
+          
             board.validMoves.clear();
             for (int c = 0; c < board.cols; c++) {
                 for (int r = 0; r < board.rows; r++) {
@@ -71,10 +71,10 @@ public class input extends MouseAdapter {
         }
         if (board.promotionPending) {
             board.askPromotion();
-            return;  // Terfi bitmeden başka hareket engellenir
+            return; 
         }
 
-        // Seçimi temizle
+       
         board.selectPiece = null;
         board.selectedCol = -1;
         board.selectedRow = -1;
@@ -83,3 +83,4 @@ public class input extends MouseAdapter {
     }
 
 }
+
