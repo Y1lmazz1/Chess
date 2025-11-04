@@ -21,9 +21,10 @@ public class Bishop extends Piece {
     public boolean canMoveTo(int newCol, int newRow) {
         int colDiff = Math.abs(newCol - this.col);
         int rowDiff = Math.abs(newRow - this.row);
-        // Fil çapraz hareket eder, satır ve sütun farkı eşit olmalı
+        
         return colDiff == rowDiff && colDiff != 0;
     }
 
 
 }
+
