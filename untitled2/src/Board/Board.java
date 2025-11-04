@@ -32,7 +32,7 @@ public class Board extends JPanel {
     }
 
     private void setupPieces() {
-        // Siyah taşlar
+        
         addPiece(new Rook(this, 0, 0, false));
         addPiece(new Knight(this, 1, 0, false));
         addPiece(new Bishop(this, 2, 0, false));
@@ -45,7 +45,7 @@ public class Board extends JPanel {
             addPiece(new Pawn(this, i, 1, false));
         }
 
-        // Beyaz taşlar
+        
         addPiece(new Rook(this, 0, 7, true));
         addPiece(new Knight(this, 1, 7, true));
         addPiece(new Bishop(this, 2, 7, true));
@@ -133,27 +133,27 @@ public class Board extends JPanel {
             }
         }
 
-        // --- Buradan itibaren hamleyi geçici uygula ve şah kontrolü yap ---
+        
 
         int oldCol = move.piece.col;
         int oldRow = move.piece.row;
         Piece capturedPiece = target;
 
-        // Hamleyi geçici uygula
+       
         move.piece.col = move.newCol;
         move.piece.row = move.newRow;
         if (capturedPiece != null) {
             pieceList.remove(capturedPiece);
         }
 
-        // Şahın saldırı altında olup olmadığını kontrol et
+        
         boolean kingInCheck = false;
         int[] kingPos = getKingPosition(move.piece.isWhite);
         if (kingPos != null) {
             kingInCheck = isSquareAttacked(kingPos[0], kingPos[1], !move.piece.isWhite);
         }
 
-        // Hamleyi geri al
+
         move.piece.col = oldCol;
         move.piece.row = oldRow;
         if (capturedPiece != null) {
@@ -161,13 +161,13 @@ public class Board extends JPanel {
         }
 
         if (kingInCheck) {
-            return false; // Hamle şahı hala saldırı altında bırakıyorsa geçersiz
+            return false; 
         }
 
         return true;
     }
 
-    // Ayrıca getKingPosition metodunu da ekle:
+   
     public int[] getKingPosition(boolean isWhite) {
         for (Piece p : pieceList) {
             if (p instanceof King && p.isWhite == isWhite) {
@@ -249,7 +249,7 @@ public class Board extends JPanel {
             }
         }
 
-        whiteTurn = !whiteTurn;  // Sıra değişimi
+        whiteTurn = !whiteTurn;  
         repaint();
         checkGameEnd();
 
@@ -348,8 +348,9 @@ public class Board extends JPanel {
     }
     public void showGameOver(String message) {
         JOptionPane.showMessageDialog(this, message, "Game Over", JOptionPane.INFORMATION_MESSAGE);
-        System.exit(0); // Uygulamayı sonlandır
+        System.exit(0);
     }
 
 
 }
+
