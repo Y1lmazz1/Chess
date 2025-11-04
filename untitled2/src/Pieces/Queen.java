@@ -21,10 +21,11 @@ public class Queen extends Piece {
     public boolean canMoveTo(int newCol, int newRow) {
         int colDiff = Math.abs(newCol - this.col);
         int rowDiff = Math.abs(newRow - this.row);
-        // Vezir yatay, dikey veya çapraz hareket eder
+       
         boolean isStraight = (this.col == newCol || this.row == newRow);
         boolean isDiagonal = (colDiff == rowDiff);
         return (isStraight || isDiagonal) && !(this.col == newCol && this.row == newRow);
     }
 
 }
+
