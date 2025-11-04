@@ -14,7 +14,7 @@ public class Knight extends Piece {
         this.name = "Knight";
 
         if (sheet != null && sheetScale > 0) {
-            // 3. sütun: Knight, 0. satır: beyaz, 1. satır: siyah taşlar
+            
             int yOffset = isWhite ? 0 : sheetScale;
             BufferedImage sub = sheet.getSubimage(3 * sheetScale, yOffset, sheetScale, sheetScale);
             this.sprite = sub.getScaledInstance(board.titleSize, board.titleSize, BufferedImage.SCALE_SMOOTH);
@@ -33,3 +33,4 @@ public class Knight extends Piece {
 
 
 }
+
