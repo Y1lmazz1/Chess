@@ -15,3 +15,6 @@ Projenin en kritik ve heyecan verici adımı, Yapay Zeka (AI) yeteneği eklemekt
 Tek Oyunculu Mod (AI Entegrasyonu): Kullanıcının farklı zorluk seviyelerinde bir bilgisayar rakibine karşı oynayabilmesi için bir yapay zeka motoru entegre edilecektir. (Muhtemelen Minimax Algoritması veya Alpha-Beta Budama teknikleri kullanılacaktır.)
 
 Hamle Geçmişi ve Geri Alma: Oyun sırasındaki hamleleri gösteren bir log paneli ve hamleleri geri alabilme özelliği.
+
+
+<img width="975" height="988" alt="Ekran görüntüsü 2025-11-04 123530" src="https://github.com/user-attachments/assets/9b2d5a9e-f1a8-4dec-94e7-996510c5bdda" />
