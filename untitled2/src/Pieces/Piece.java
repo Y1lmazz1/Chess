@@ -6,20 +6,20 @@ import java.awt.image.BufferedImage;
 import Board.Board;
 
 public class Piece {
-    public int col, row;         // Mantıksal konum (tahta üzerindeki sütun/satır)
-    public int xPos, yPos;       // Grafiksel konum (piksel cinsinden)
-    public boolean isWhite;      // Taşın rengi
-    public String name;          // Taşın adı (örn. "Rook")
+    public int col, row;       
+    public int xPos, yPos;       
+    public boolean isWhite;      
+    public String name;          
     public int value;
-    public boolean hasMoved = false; // Taşın değeri
+    public boolean hasMoved = false;
 
-    public Board board;          // Sahip olduğu tahta
-    public Image sprite;         // Çizilecek görüntü
+    public Board board;          
+    public Image sprite;        
 
     protected BufferedImage sheet;
-    protected int sheetScale = 64; // Sprite sheet içindeki her taşın boyutu (varsayılan)
+    protected int sheetScale = 64; 
 
-    // ✔️ Genişletilmiş kurucu metod
+   
     public Piece(Board board, int col, int row, boolean isWhite) {
         this.board = board;
         this.col = col;
@@ -31,7 +31,7 @@ public class Piece {
         try {
             sheet = ImageIO.read(getClass().getResourceAsStream("/Models/pieces.png"));
             if (sheet != null) {
-                sheetScale = sheet.getWidth() / 6; // 6 sütun: Piyon, Kale, At, Fil, Vezir, Şah
+                sheetScale = sheet.getWidth() / 6;
             } else {
                 System.err.println("Piece.png not found!");
             }
@@ -41,26 +41,27 @@ public class Piece {
         }
     }
 
-    // ✔️ Sprite sheet'ten taşın görselini al
+   
     public BufferedImage getSprite(int sheetCol, int sheetRow) {
         return sheet.getSubimage(sheetCol * sheetScale, sheetRow * sheetScale, sheetScale, sheetScale);
     }
 
-    // ✔️ Taşı çiz (ekran pozisyonuna göre)
+   
     public void draw(Graphics2D g2d) {
         if (sprite != null) {
             g2d.drawImage(sprite, xPos, yPos, board.titleSize, board.titleSize, null);
         }
     }
 
-    // ❌ Gerekli değil ama yedek: tüm sheet'i çizer (debug için)
+    
     public void paint(Graphics2D g2d) {
         if (sheet != null) {
             g2d.drawImage(sheet, xPos, yPos, sheetScale, sheetScale, null);
         }
     }
     public boolean canMoveTo(int newCol, int newRow) {
-        return false; // Genel taş için hareket kuralı yok
+        return false;
     }
 
 }
+
