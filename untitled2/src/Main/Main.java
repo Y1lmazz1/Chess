@@ -18,7 +18,7 @@ public class Main {
 
         Board board = new Board();
 
-        // Mouse input'u ekle
+   
         input mouseInput = new input(board);
         board.addMouseListener(mouseInput);
         board.addMouseMotionListener(mouseInput);
