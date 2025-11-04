@@ -24,9 +24,8 @@ public class King extends Piece {
         int colDiff = Math.abs(newCol - this.col);
         int rowDiff = Math.abs(newRow - this.row);
 
-        // Rok hamlesi kontrolü
         if (rowDiff == 0 && colDiff == 2) {
-            return true; // Rok olup olmadığı ayrıca isValidMove içinde kontrol edilecek
+            return true; 
         }
 
         return (colDiff <= 1 && rowDiff <= 1) && !(colDiff == 0 && rowDiff == 0);
@@ -65,3 +64,4 @@ public class King extends Piece {
         return true;
     }
 }
+
